@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Login({ setUser, setView }) {
+export default function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // ← usamos el hook para redirigir
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,6 +18,7 @@ export default function Login({ setUser, setView }) {
     if (foundUser) {
       localStorage.setItem("loggedUser", JSON.stringify(foundUser));
       setUser(foundUser.username);
+      navigate("/"); // ← redirige al dashboard
     } else {
       setError("Usuario o contraseña incorrectos");
     }
@@ -46,7 +49,7 @@ export default function Login({ setUser, setView }) {
         ¿No tienes cuenta?{" "}
         <button
           className="text-green-400 underline"
-          onClick={() => setView("register")}
+          onClick={() => navigate("/register")} // ← redirige a /register
         >
           Regístrate
         </button>
