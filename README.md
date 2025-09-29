@@ -1,1 +1,1 @@
-.
+El objetivo del proyecto es crear una aplicación web que permita a los usuarios crear y gestionar sus propias listas de tareas. La aplicación debe permitir a los usuarios crear nuevas listas, agregar tareas a las listas, marcar tareas como completadas y eliminar listas y tareas. Además, la aplicación debe ser responsive y adaptable a diferentes dispositivos.
