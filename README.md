@@ -34,7 +34,6 @@ Orden de proyecto y/o carpetas:
 2. las carpetas que debemos de tener son:
    - public
    - src
-   - README.md
 3. dentro de src tenemos:
    - components
    - pages
