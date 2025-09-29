@@ -17,7 +17,7 @@ function Dashboard({ user, tasks, addTask, toggleTask, search, setSearch, logout
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">TEAM TO DO</h1>
+        <h1 className="text-3xl font-bold bg-blue-900 p-3 rounded-lg">TEAM TO DO</h1>
         <button
           onClick={logout}
           className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded"
@@ -25,7 +25,7 @@ function Dashboard({ user, tasks, addTask, toggleTask, search, setSearch, logout
           Cerrar sesión
         </button>
       </div>
-      <p className="mb-4">Bienvenido, {user} 👋</p>
+      <p className="mb-4 text-lg text-center">❗Bienvenido, {user}❗</p>
       <TaskForm addTask={addTask} author={user} />
       <SearchBar setSearch={setSearch} />
       <TaskList tasks={filteredTasks} toggleTask={toggleTask} />
@@ -105,3 +105,5 @@ export default function App() {
     </Router>
   );
 }
+
+

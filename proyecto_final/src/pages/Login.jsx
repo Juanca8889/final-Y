@@ -5,20 +5,20 @@ export default function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // ← usamos el hook para redirigir
+  const navigate = useNavigate(); // navegar en pages 
 
   const handleLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //actualizar pg 
 
     const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
     const foundUser = savedUsers.find(
-      (u) => u.username === username && u.password === password
+      (u) => u.username === username && u.password === password //compara el usuario y la contraseña
     );
 
     if (foundUser) {
       localStorage.setItem("loggedUser", JSON.stringify(foundUser));
       setUser(foundUser.username);
-      navigate("/"); // ← redirige al dashboard
+      navigate("/"); // redirige al dashboard
     } else {
       setError("Usuario o contraseña incorrectos");
     }
@@ -49,7 +49,7 @@ export default function Login({ setUser }) {
         ¿No tienes cuenta?{" "}
         <button
           className="text-green-400 underline"
-          onClick={() => navigate("/register")} // ← redirige a /register
+          onClick={() => navigate("/register")} // redirige a register
         >
           Regístrate
         </button>

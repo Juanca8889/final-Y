@@ -5,10 +5,10 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // ← Hook de navegación
+  const navigate = useNavigate(); // navegar en pages 
 
   const handleRegister = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // no se actualiza pag
 
     // Leer usuarios ya guardados
     const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -26,7 +26,7 @@ export default function Register() {
 
     alert("Usuario registrado con éxito");
 
-    // Redirigir al login después de registrar
+    // Redirigir al login 
     navigate("/login");
   };
 
@@ -57,7 +57,7 @@ export default function Register() {
         ¿Ya tienes cuenta?{" "}
         <button
           className="text-blue-400 underline"
-          onClick={() => navigate("/login")} // ← Redirigir a login
+          onClick={() => navigate("/login")} 
         >
           Inicia sesión
         </button>
